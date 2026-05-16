@@ -1,0 +1,21 @@
+[package]
+name = "macos_profiler"
+version = "0.1.0"
+edition = "2021"
+description = "Sudoless macOS process profiler — CPU, memory, energy. Single static binary, stdlib + minimal deps."
+
+[[bin]]
+name = "macprof"
+path = "src/main.rs"
+
+[lib]
+name = "macos_profiler"
+path = "src/lib.rs"
+
+[dependencies]
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+codegen-units = 1
